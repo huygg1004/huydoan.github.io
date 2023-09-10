@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Social Network Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">HUY DOAN</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">ALL PROJECTS</a></li>
+							<li class="active"><a href="blackcyber.html">SOCIAL NETWORK ANALYSIS</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://github.com/huygg1004" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/huy-doan-368194189/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>SOCIAL NETWORK ANALYSIS</h1>
+									<h3>Description</h3>
+									<P>This project presents a comprehensive social network analysis project. It begins by creating basic undirected and directed graphs to visualize relationship structures. Network measures such as degrees, diameter, edge density, reciprocity, centrality, and betweenness are computed, offering insights into the network's characteristics. Real data is imported from a CSV file, and a network is constructed, with node labels and degrees calculated. A histogram illustrates the distribution of node degrees, and various network diagrams are used to visualize the network's structure. Finally, hub and authority scores are calculated to assess node importance, and community detection is performed to identify clusters within the network, making your analysis both informative and visually appealing.</P>
+								</header>
+
+								<header class="major">
+									<h3>Network Dataset</h3>
+								</header>
+								<div class="image main"><img src="images/social-data.PNG" alt=""  style="width: 30%; text-align: center;"/></div>
+
+								<header class="major">
+									<h3>Histogram of node degree</h3>
+								</header>
+								<div class="image main"><img src="images/social-histogram.PNG" alt="" /></div>
+								
+								<header class="major">
+									<h3>Plotting network graph with specified visual attributes</h3>
+									<h4>Force-Directed Layout (Fruchterman-Reingold)</h4>
+									<p>
+										The first diagram uses a force-directed layout algorithm known as Fruchterman-Reingold. It positions the vertices in a way that minimizes overlapping edges. Nodes with different degrees are colored using a rainbow palette, and their sizes vary based on their degrees, with higher-degree nodes being larger.
+									</p>
+									<div class="image main"><img src="images/social-reingold.PNG" alt="" /></div>
+									
+									<h4>Optimized Graph Layout (Graphopt)</h4>
+									<p>
+										The second diagram employs an optimized graph layout (Graphopt) that arranges vertices to optimize the overall layout based on certain criteria. Similar to the previous diagram, it uses a rainbow color palette for nodes and adjusts node sizes according to their degrees.
+									</p>
+									<div class="image main"><img src="images/social-graphopt.PNG" alt="" /></div>
+									
+									<h4>Kamada-Kawai Layout</h4>
+									<p>
+										In the third diagram, we utilize the Kamada-Kawai layout algorithm. This layout algorithm aims to visually position vertices in an efficient manner, enhancing the clarity of the network structure. As with the others, node colors and sizes provide insights into the network's characteristics.
+									</p>
+									<div class="image main"><img src="images/social-kawai.PNG" alt="" /></div>
+								</header>
+
+
+
+								<header class="major">
+									<h3>Hubs and Auhthorities</h3>
+									<div class="image main" style="text-align: center;">
+										<img src="images/social-hubs-authorities.PNG" alt="" style="width: 110%; height: auto; display: block; margin: 0 auto;" />
+									</div>
+								</header>
+
+								<header class="major">
+									<h3>Community Detection</h3>
+									<div class="image main" style="text-align: center;">
+										<img src="images/social-community.PNG" alt="" style="width: 110%; height: auto; display: block; margin: 0 auto;" />
+									</div>
+								</header>
+
+								<h4>GitHub link:</h4><p>https://github.com/huygg1004/Social-Network-Analysis-R.git</p>
+							</section>
+
+					</div>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Huy Doan</li>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
