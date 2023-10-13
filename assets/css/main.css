@@ -3310,7 +3310,11 @@ input, select, textarea {
 		cursor: default;
 		text-align: center;
 		z-index: 1;
-		min-height: 100vh;
+		min-height: 50vh;
+		/* newly added */
+		transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+		opacity: 1;
+		visibility: visible;
 	}
 
 		#intro input, #intro select, #intro textarea {
@@ -4687,3 +4691,20 @@ input, select, textarea {
 		}
 
 	}
+
+	.boxed-link {
+		display: inline-block;
+		padding: 10px 20px; /* Adjust the padding as needed for your desired box size */
+		transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+	}
+	
+	.boxed-link a {
+		text-decoration: none; /* Remove underline from the link */
+		color: #ffffff; /* Text color within the box */
+	}
+	
+	.boxed-link:hover {
+		background-color: #ffffff; /* Background color on hover */
+		color: black; /* Text color on hover */
+	}
+	

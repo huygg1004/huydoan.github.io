@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Web Dev Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+				<!-- Intro -->
+					<div id="intro" class="show">
+						<h1>Web Development</h1>
+						
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="web-development.html" class="logo">Web Dev Projects</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li ><a href="index.html">About Me</a></li>
+							<li class="active"><a href="web-development.html">Web Development</a></li>
+							<li><a href="data-analytics.html">Data Analytics & ML</a></li>
+							<li><a href="other.html">Other</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/huy-doan-368194189/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/huygg1004" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header class="major">
+										<h2><a href="intex.html">Fag El Gamous Burial Site<br />
+										</a></h2>
+										<p>In this project we build a website to help archaeologists view and organized information regarding mummies burial locations and help the public understand better about the burial site</p>
+										<p><strong>Technologies Used:</strong> .NET 5.0, MSSQL, Bootstrap, and Tableau for data visualization, deployment using AWS Elastic Beanstalk</p>
+									</header>
+									<a href="twitter-modelling.html" class="image fit">
+										<img src="images/egypt-2.jpg" alt="" width="80" height="200" />
+									</a>	
+									<ul class="actions special">
+										<li><a href="intex.html" class="button large">View Project</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<h2><a href="blackcyber.html">Black Cyber Recruiter<br />
+										</a></h2>
+									</header>
+									<a href="blackcyber.html" class="image fit"><img src="images/black.png" alt="" /></a>
+									<p>We created a job application web platform with Python/Django, aimed at improving employment opportunities for African Americans in the US by facilitating connections with potential employers.</p>
+									<ul class="actions special">
+										<li><a href="blackcyber.html" class="button">View Project</a></li>
+									</ul>
+								</article>
+							</section>
+					</div>
+				<!-- Footer -->
+				<footer id="footer">
+
+					<section>
+						<h3>Phones</h3>
+						<p>0408586055 (FI)</br>0975171727 (VN)</p>
+					</section>
+					<section>
+						<h3>Email</h3>
+						<p><a href="mailto:huy.doan@tuni.fi">huy.doan@tuni.fi</a></p>
+					</section>
+					<section>
+						<h3>Social</h3>
+						<ul class="icons alt">
+							<li><a href="https://www.linkedin.com/in/huy-doan-368194189/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/huygg1004" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+	
+			</footer>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+					var intro = document.getElementById("intro");
+					var lastScrollTop = 0;
+
+					window.addEventListener("scroll", function () {
+						var st = window.pageYOffset || document.documentElement.scrollTop;
+
+						if (st > lastScrollTop) {
+							// Scrolling down
+							intro.classList.add("hidden");
+						} else {
+							// Scrolling up
+							intro.classList.remove("hidden");
+						}
+						lastScrollTop = st;
+					});
+			</script>
+
+	</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Image Classification with Tensorflow</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<a href="image-classification-tensorflow.html" class="logo">IMAGE CLASSIFICATION</a>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li class="boxed-link"><a href="data-analytics.html">BACK</a></li>
+			</ul>
+			<ul class="icons">
+				<li><a href="https://www.linkedin.com/in/huy-doan-368194189/" class="icon brands alt fa-linkedin"><span
+							class="label">Linkedin</span></a></li>
+				<li><a href="https://github.com/huygg1004" class="icon brands alt fa-github"><span
+							class="label">GitHub</span></a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<section class="post">
+				<div class="project-description">
+					<h2>Happy-Sad Image Recognition with CIFAR-10 Exploration</h2>
+					<p><strong>Objective:</strong>
+						Develop a neural network-based model to classify images into two emotions: happy and sad.
+						Additionally, explore and preprocess the CIFAR-10 dataset.</p>
+
+					<h3>Sections:</h3>
+					<ol>
+						<li>Setting up Dependencies: Initial setup to load necessary libraries and tools required for
+							the project.</li>
+						<li>Exploring the Happy-Sad Dataset: A detailed exploration and visualization of the image
+							dataset, understanding its structure, and providing insights about the data.</li>
+						<li>Scaling the Data: Pre-processing step to ensure the image data is normalized or
+							standardized.</li>
+						<li>Splitting the Data: Dividing the dataset into training, evaluation, and test sets.</li>
+						<li>Building the Neural Network Model: Designing and implementing the neural network
+							architecture.</li>
+						<li>Training: Initiating the model training process.</li>
+						<li>Plotting Performance: Visualizing the model's training performance.</li>
+						<li>Evaluate: Assessing the trained model's performance.</li>
+						<li>Testing the Model: A final test of the model's classification ability.</li>
+						<li>CIFAR-10 Data Preprocessing: Loading the CIFAR-10 dataset using Keras, exploring its
+							structure, normalizing images, and one-hot encoding labels.</li>
+					</ol>
+				</div>
+				<h4 style="text-align: center;">Github Link: https://github.com/huygg1004/Image_Classification.git</h4>
+			</section>
+	
+		
+			
+			<!-- Image display section -->
+			<section class="image-display">
+				<div class="image-container">
+					<img src="images/tensorflow-v1.png" alt="Model Summary">
+					<p>Model Summary</p>
+				</div>
+				<div class="image-container">
+					<img src="images/tensorflow-v2.png" alt="Training Process">
+					<p>Training Process</p>
+				</div>
+				<div class="image-container">
+					<img src="images/tensorflow-v3.png" alt="Model Performance">
+					<p>Model Performance</p>
+				</div>
+				<div class="image-container">
+					<img src="images/tensorflow-v4.png" alt="Happy vs Sad sample data">
+					<p>Happy vs Sad sample data</p>
+				</div>
+			</section>
+
+		</div>
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="img01">
+			<div id="caption"></div>
+		</div>
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<ul>
+				<li>&copy; Huy Doan</li>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script>
+		// Get the modal
+		var modal = document.getElementById("myModal");
+
+		// Get the image and insert it inside the modal, use its "alt" text as a caption
+		var img = document.querySelectorAll('.image-container img');
+		var modalImg = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+
+		for (let i = 0; i < img.length; i++) {
+			img[i].onclick = function () {
+				modal.style.display = "block";
+				modalImg.src = this.src;
+				captionText.innerHTML = this.alt;
+			}
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+		// Close the modal when the background (but not the image or caption) is clicked
+		modal.onclick = function (event) {
+			if (event.target == modal) {  // Check if the background was clicked
+				modal.style.display = "none";
+			}
+		}
+
+	</script>
+
+</body>
+<style>
+	.image-display {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		flex-wrap: nowrap;
+		/* Ensure images stay in one row and don't wrap to the next line */
+	}
+
+	.image-container {
+		flex: 1;
+		/* Distribute container space equally */
+		max-width: 24%;
+		/* Allocate a quarter of the space to each image, minus the gap */
+		text-align: center;
+	}
+
+	.image-container img {
+		width: 100%;
+		/* Make image take full width of its container */
+		height: auto;
+		/* Maintain the aspect ratio */
+		max-height: 150px;
+		/* Optional: You can adjust this to limit the height if necessary */
+	}
+
+	/* Media queries for responsiveness. This is an example for screens less than 600px wide */
+	@media (max-width: 600px) {
+		.image-container {
+			max-width: 100%;
+			/* Allow the image containers to take full width */
+		}
+
+		.image-display {
+			flex-direction: column;
+			/* Stack images vertically on smaller screens */
+		}
+	}
+
+	/* Style the modal */
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 10000;
+		padding-top: 100px;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.9);
+	}
+
+	.modal-content {
+		margin: auto;
+		display: block;
+		width: 90%;
+		/* increased from 80% to 90% */
+		max-width: 1200px;
+		/* you can adjust this value based on your preference */
+	}
+
+	#caption {
+		margin: auto;
+		display: block;
+		width: 80%;
+		max-width: 700px;
+		text-align: center;
+		color: #ccc;
+		padding: 10px 0;
+		height: 150px;
+	}
+
+	.modal-content,
+	#caption {
+		animation-name: zoom;
+		animation-duration: 0.6s;
+	}
+
+	@keyframes zoom {
+		from {
+			transform: scale(0)
+		}
+
+		to {
+			transform: scale(1)
+		}
+	}
+
+	/* Close button */
+	.close {
+		position: absolute;
+		top: 15px;
+		right: 35px;
+		color: #f1f1f1;
+		font-size: 40px;
+		font-weight: bold;
+		transition: 0.3s;
+	}
+
+	.close:hover,
+	.close:focus {
+		color: #bbb;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.github-section {
+		text-align: center;
+		/* Center the content */
+		margin: 40px 0;
+		/* Add some space above and below the section */
+	}
+
+	.github-section a {
+		color: #333;
+		/* Color of the text */
+		text-decoration: none;
+		/* Remove underline */
+		font-weight: bold;
+		/* Make the text bold */
+		display: inline-flex;
+		/* Use flex to align the icon and text side by side */
+		align-items: center;
+		/* Vertically align the icon and text */
+		gap: 10px;
+		/* Add some space between the icon and text */
+	}
+
+	.github-section a:hover {
+		color: #0076b6;
+		/* Change color on hover */
+		text-decoration: underline;
+		/* Add underline on hover */
+	}
+
+	.github-section img {
+		width: 24px;
+		/* Adjust based on the size of your icon */
+		height: 24px;
+		/* Adjust based on the size of your icon */
+	}
+</style>
+
+</html>

@@ -18,14 +18,10 @@
 			<div id="wrapper" class="fade-in">
 
 				<!-- Intro -->
-					<div id="intro">
-						<h1>Huy Doan<br />
-						Portfolio</h1>
-						<p>The projects outlined below are designed to showcase specific skills, <br>
-							namely data analytics using Python and web application development<br>
-							 using both the Python Django and C# .NET frameworks 
-						<br>
-							<a href="https://www.linkedin.com/in/huy-doan-368194189/">Linkedin</a> -- <a href="https://github.com/huygg1004">Github</a><br />
+					<div id="intro" class="show">
+						<h1>Huy Doan<br /></h1>
+						<p>This website aims to display all the projects to showcase my specific skills, namely:<br>
+							Data analytics, Building machine learning models, and Web application development
 						</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
@@ -40,7 +36,10 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
+							<li class="active"><a href="index.html">About Me</a></li>
+							<li><a href="web-development.html">Web Development</a></li>
+							<li><a href="data-analytics.html">Data Analytics & ML</a></li>
+							<li><a href="other.html">Other</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="https://www.linkedin.com/in/huy-doan-368194189/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
@@ -50,114 +49,66 @@
 
 				<!-- Main -->
 					<div id="main">
-
 						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<h2><a href="uber.html">Uber Data Analytics<br />
-									</a></h2>
-									<p>In this project we build a data pipeline for ETL process and display the data unto a Looker Dashboard for analytics</p>
-									<p><strong>Technologies Used: GCP: Cloud Storage, Compute Engine, BigQuery, Looker - Python, SQL - Mage.AI for Data Pipeline </strong> </p>
-								</header>
-								<a href="uber.html" class="image main"><img src="images/uber-logo.jpg" alt="" width="100" /></a>
-								<ul class="actions special">
-									<li><a href="uber.html" class="button large">View Project</a></li>
-								</ul>
-							</article>
-
-						<!-- Posts -->
-							<section class="posts">
-								<article>
+						<div style="display: flex; flex-direction: row; align-items: flex-start;">
+							<div style="flex: 1; padding-right: 20px;">
+								<article class="post featured">
 									<header class="major">
-										<h2><a href="intex.html">Fag El Gamous Burial Site<br />
-										</a></h2>
-										<p>In this project we build a website to help archaeologists view and organized information regarding mummies burial locations and help the public understand better about the burial site</p>
-										<p><strong>Technologies Used:</strong> .NET 5.0, MSSQL, Bootstrap, and Tableau for data visualization, deployment using AWS Elastic Beanstalk</p>
+										<h2 style="background-color: #ccc; padding: 10px;">Education</h2>
+										<p>
+											<ul>
+												<strong>Brigham Young University</strong>
+												<ul>
+													<li style="list-style: none;">Bachelor of Science, Information Systems</li>
+													<li style="list-style: none;">Utah, USA | 08/2015 - 12/2021</li>
+												</ul>
+												<strong>Tampere University</strong>
+												<ul>
+													<li style="list-style: none;">Master of Science, Data Science</li>
+													<li style="list-style: none;">Tampere, Finland | 08/2022 - 07/2024</li>
+												</ul>
+											</ul>
+										</p>
 									</header>
-									<a href="intex.html" class="image main"><img src="images/egypt.png" alt="" /></a>
-									<ul class="actions special">
-										<li><a href="intex.html" class="button large">View Project</a></li>
-									</ul>
 								</article>
-								<article>
-									<header>
-										<h2><a href="blackcyber.html">Black Cyber Recruiter<br />
-										</a></h2>
+							</div>
+							<div style="flex: 1; margin-left: 200px;"> <!-- Adjust margin-left as needed -->
+								<!-- Your image goes here with max-width property -->
+								<img src="images/my_image.JPG" alt="Your Image" style="max-width: 100%; height: 700px;">
+							</div>
+						</div>
+
+						<div style="display: flex; flex-direction: row; align-items: flex-start;">
+							<div style="flex: 1; padding-right: 20px;">
+								<article class="post featured">
+									<header class="major">
+										<h2 style="background-color: #ccc; padding: 10px;">Skills</h2>
+										<p>
+											<ul>
+												<li style="list-style: none;"><strong>Programming Languages: </strong> Python, R, C#, C++, SQL, JavaScript</li>
+												<li style="list-style: none;"><strong> Database: </strong>PostgreSQL, MSSQL</li>
+												<li style="list-style: none;"><strong> Cloud: </strong>AWS, GCP</li>
+												<li style="list-style: none;"><strong> Data Analytics and ML: </strong>Numpy, Pandas, Scikit-Learn, Matplotlib, Seaborn, TensorFlow, Keras, PyTorch</li>
+												<li style="list-style: none;"><strong> Visualization: </strong>Tableau, SPSS, Weka</li>
+												<li style="list-style: none;"><strong> Others: </strong>Git, Hadoop, Spark</li>
+											</ul>
+										</p>
 									</header>
-									<a href="blackcyber.html" class="image fit"><img src="images/black.png" alt="" /></a>
-									<p>We created a job application web platform with Python/Django, aimed at improving employment opportunities for African Americans in the US by facilitating connections with potential employers.</p>
-									<ul class="actions special">
-										<li><a href="blackcyber.html" class="button">View Project</a></li>
-									</ul>
 								</article>
-								<article>
-									<header>
-										<h2><a href="socialnetworkanalysis.html">Social Network Analysis<br />
-										</a></h2>
-									</header>
-									<a href="socialnetworkanalysis.html" class="image fit"><img src="images/social.PNG" alt="" /></a>
-									<p>A Social network analysis project in R, covering graph creation, network measures, data import, visualization, and node importance assessment. It provides a comprehensive overview of network analysis techniques and their application to real-world data</p>
-									<ul class="actions special">
-										<li><a href="socialnetworkanalysis.html" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="movie-recommender.html">Movie Recommender Systems<br />
-										</a></h2>
-									</header>
-									<a href="movie-recommender.html" class="image fit"><img src="images/movie.png" alt="" /></a>
-									<p>A movie recommender system that utilizes both user-based and item-based collaborative filtering approaches</p>
-									<p><strong>Libraries Used:</strong> Numpy, pandas, matplotlib, data preprocessing, seaborn, sklearn</p>
-									<ul class="actions special">
-										<li><a href="movie-recommender.html" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="twitter-modelling.html">Twitter Data Modeling<br />
-										</a></h2>
-									</header>
-									<a href="twitter-modelling.html" class="image fit"><img src="images/twitter.png" alt="" /></a>
-									<p>The objective of the project is to gain insights into public opinion on the COVID-19 pandemic by leveraging the Twitter API to extract relevant tweets containing both text and images.</p>
-									<p><strong>Libraries Used: </strong> sklearn, pandas, numpy, seaborn, matplotlib, genism, nltk, spacy, and more</p>
-									<ul class="actions special">
-										<li><a href="twitter-modelling.html" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="finland-trains.html">Finland Trainstations<br />
-										</a></h2>
-									</header>
-									<a href="finland-trains.html" class="image fit"><img src="images/finland.jpg" alt="" /></a>
-									<p>A C++ project features a user interface that displays train station connections throughout Finland and includes effective data structures and algorithms for finding paths among them.</p>
-									<ul class="actions special">
-										<li><a href="finland-trains.html" class="button">View Project</a></li>
-									</ul>
-								</article>
-							</section>
+							</div>
+						</div>
 					</div>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<section class="split contact">
-							<section class="alt">
-								<h3>Location</h3>
-								<p>Tampere, Finland<br />
-								</p>
-							</section>
+
 							<section>
-								<h3>Phone (FI)</h3>
-								<p><a href="#">0408586055</a></p>
-							</section>
-							<section>
-								<h3>Phone (VN)</h3>
-								<p><a href="#">0975171727</a></p>
+								<h3>Phones</h3>
+								<p>0408586055 (FI)</br>0975171727 (VN)</p>
 							</section>
 							<section>
 								<h3>Email</h3>
-								<p><a href="#">huy.doan@tuni.fi</a></p>
+								<p><a href="mailto:huy.doan@tuni.fi">huy.doan@tuni.fi</a></p>
 							</section>
 							<section>
 								<h3>Social</h3>
@@ -166,13 +117,8 @@
 									<li><a href="https://github.com/huygg1004" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
 							</section>
-						</section>
+			
 					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Huy Doan</li>
-					</div>
 			</div>
 
 		<!-- Scripts -->
@@ -183,6 +129,23 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var intro = document.getElementById("intro");
+				var lastScrollTop = 0;
 
+				window.addEventListener("scroll", function () {
+					var st = window.pageYOffset || document.documentElement.scrollTop;
+
+					if (st > lastScrollTop) {
+						// Scrolling down
+						intro.classList.add("hidden");
+					} else {
+						// Scrolling up
+						intro.classList.remove("hidden");
+					}
+
+					lastScrollTop = st;
+				});
+			</script>
 	</body>
 </html>
