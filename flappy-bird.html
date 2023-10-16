@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Flappy Bird</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <a href="flappy-bird.html" class="logo">Flappy Bird</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li class="boxed-link"><a href="other.html">BACK</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/huy-doan-368194189/" class="icon brands alt fa-linkedin"><span
+                            class="label">Linkedin</span></a></li>
+                <li><a href="https://github.com/huygg1004" class="icon brands alt fa-github"><span
+                            class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <section class="post">
+                <header class="major">
+                    <h2>Flappy Bird</h2>
+                    <!-- Image display section -->
+                    <section class="image-display">
+                        <div class="image-container">
+                            <img src="images/flappy-bird_1.png" alt="Screenshot 1">
+                            <p>Screenshot 1</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="images/flappy-bird_2.png" alt="Screenshot 2">
+                            <p>Screenshot 2</p>
+                        </div>
+                        <div class="image-container">
+                            <img src="images/flappy-bird_3.png" alt="Screenshot 3">
+                            <p>Screenshot 3</p>
+                        </div>
+                    </section>
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
+                    <h3>Gameplay Mechanics:</h3>
+                    <ul>
+                        <li>One-button control scheme: players tap the screen to make the bird flap its wings and ascend.</li>
+                        <li>The main objective is to navigate the bird through gaps between pipes.</li>
+                        <li>The bird descends when not tapping the screen, simulating gravity.</li>
+                    </ul>
+                
+                    <h3>Difficulty & Progression:</h3>
+                    <ul>
+                        <li>The game is known for its high difficulty level.</li>
+                        <li>Pipes are set at varying heights, and the gap between them remains constant throughout a single round but can change from one round to the next.</li>
+                        <li>There are no levels; the game's difficulty remains static, but the speed can increase over time in some variations.</li>
+                    </ul>
+                
+                    <h3>Scoring:</h3>
+                    <ul>
+                        <li>Players earn a single point for each set of pipes they successfully pass through.</li>
+                        <li>No in-game currency or scoring modifiers.</li>
+                    </ul>
+                    <h3>Game Over Condition:</h3>
+                    <ul>
+                        <li>The game ends when the bird collides with a pipe or the ground.</li>
+                        <li>There are no lives or second chances; any mistake ends the game.</li>
+                    </ul>
+                </header>
+                <h5>Github Link</h5>
+                <a href="https://github.com/huygg1004/FlappyBird.git" target="_blank">https://github.com/huygg1004/FlappyBird.git</a>
+            </section>
+        </div>
+
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul>
+                <li>&copy; Huy Doan</li>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal, use its "alt" text as a caption
+        var img = document.querySelectorAll('.image-container img');
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        for (let i = 0; i < img.length; i++) {
+            img[i].onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        // Close the modal when the background (but not the image or caption) is clicked
+        modal.onclick = function (event) {
+            if (event.target == modal) {  // Check if the background was clicked
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
+
+</body>
+<style>
+    .image-display {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: nowrap;
+        /* Ensure images stay in one row and don't wrap to the next line */
+    }
+
+    .image-container {
+        flex: 1;
+        /* Distribute container space equally */
+        max-width: 24%;
+        /* Allocate a quarter of the space to each image, minus the gap */
+        text-align: center;
+    }
+
+    .image-container img {
+        width: 100%;
+        /* Make image take full width of its container */
+        height: auto;
+        /* Maintain the aspect ratio */
+        max-height: 150px;
+        /* Optional: You can adjust this to limit the height if necessary */
+    }
+
+    /* Media queries for responsiveness. This is an example for screens less than 600px wide */
+    @media (max-width: 600px) {
+        .image-container {
+            max-width: 100%;
+            /* Allow the image containers to take full width */
+        }
+
+        .image-display {
+            flex-direction: column;
+            /* Stack images vertically on smaller screens */
+        }
+    }
+
+    /* Style the modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 90%;
+        /* increased from 80% to 90% */
+        max-width: 500px;
+        /* you can adjust this value based on your preference */
+    }
+
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    .modal-content,
+    #caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+    /* Close button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .github-section {
+        text-align: center;
+        /* Center the content */
+        margin: 40px 0;
+        /* Add some space above and below the section */
+    }
+
+    .github-section a {
+        color: #333;
+        /* Color of the text */
+        text-decoration: none;
+        /* Remove underline */
+        font-weight: bold;
+        /* Make the text bold */
+        display: inline-flex;
+        /* Use flex to align the icon and text side by side */
+        align-items: center;
+        /* Vertically align the icon and text */
+        gap: 10px;
+        /* Add some space between the icon and text */
+    }
+
+    .github-section a:hover {
+        color: #0076b6;
+        /* Change color on hover */
+        text-decoration: underline;
+        /* Add underline on hover */
+    }
+
+    .github-section img {
+        width: 24px;
+        /* Adjust based on the size of your icon */
+        height: 24px;
+        /* Adjust based on the size of your icon */
+    }
+</style>
+
+</html>
