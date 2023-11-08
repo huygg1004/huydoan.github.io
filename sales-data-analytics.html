@@ -1,0 +1,509 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Sales Data Analytics</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <a href="sales-data-analytics.html" class="logo">Sales Data Analytics</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li class="boxed-link"><a href="data-analytics.html">BACK</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/huy-doan-368194189/" class="icon brands alt fa-linkedin"><span
+                            class="label">Linkedin</span></a></li>
+                <li><a href="https://github.com/huygg1004" class="icon brands alt fa-github"><span
+                            class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <section class="post">
+                <header class="major">
+                    <h2>SALES DATA ANALYTICS</h2>
+                    <h3 style="color: red">Problems and Questions I want to address in this dataset</h3>
+                    <ol>
+                        <li style="list-style-type: none;">Predicting Sales using regression methods, finding which variables contribute the most and which regression algorithms work best</li>
+                        <li style="list-style-type: none;">Time Series Forecasting: Predict future sales based on historical data.</li>
+                        <li style="list-style-type: none;">Classification: Predict the order status (e.g., 'Shipped', 'Cancelled') based on other features.</li>
+                        <li style="list-style-type: none;">Clustering: Group customers based on their purchasing behavior.</li>
+                    </ol>
+
+                    <h3 style="color: red">Data Exploration: Sales Dataset</h3>
+                    <h4>Columns Description</h4>
+                    <ol>
+                        <li style="list-style-type: none;">ORDERNUMBER: The unique identifier for each order.</li>
+                        <li style="list-style-type: none;">QUANTITYORDERED: The number of items ordered.</li>
+                        <li style="list-style-type: none;">PRICEEACH: The price of each item.</li>
+                        <li style="list-style-type: none;">ORDERLINENUMBER: The line number for the item in the order (useful for orders with multiple items).</li>
+                        <li style="list-style-type: none;">SALES: The total sales value (which appears to be the product of QUANTITYORDERED and PRICEEACH for most records).</li>
+                        <li style="list-style-type: none;">ORDERDATE: The date when the order was placed.</li>
+                        <li style="list-style-type: none;">STATUS: The current status of the order (e.g., "Shipped").</li>
+                        <li style="list-style-type: none;">QTR_ID: The quarter of the year in which the order was placed (e.g., 1 for Q1).</li>
+                        <li style="list-style-type: none;">MONTH_ID: The month in which the order was placed.</li>
+                        <li style="list-style-type: none;">YEAR_ID: The year in which the order was placed.</li>
+                        <li style="list-style-type: none;">PRODUCTLINE: The product category or line.</li>
+                        <li style="list-style-type: none;">MSRP: Manufacturer's suggested retail price.</li>
+                        <li style="list-style-type: none;">PRODUCTCODE: A unique code assigned to each product.</li>
+                        <li style="list-style-type: none;">CUSTOMERNAME: The name of the customer who placed the order.</li>
+                        <li style="list-style-type: none;">PHONE: The contact phone number for the customer.</li>
+                        <li style="list-style-type: none;">ADDRESSLINE1: The first line of the customer's address.</li>
+                        <li style="list-style-type: none;">ADDRESSLINE2: The second line of the customer's address (may be empty for many records).</li>
+                        <li style="list-style-type: none;">CITY: The city of the customer's address.</li>
+                        <li style="list-style-type: none;">STATE: The state of the customer's address.</li>
+                        <li style="list-style-type: none;">POSTALCODE: The postal code of the customer's address.</li>
+                        <li style="list-style-type: none;">COUNTRY: The country of the customer's address.</li>
+                        <li style="list-style-type: none;">TERRITORY: The sales territory or region.</li>
+                        <li style="list-style-type: none;">CONTACTLASTNAME: The last name of the contact person for the customer.</li>
+                        <li style="list-style-type: none;">CONTACTFIRSTNAME: The first name of the contact person for the customer.</li>
+                        <li style="list-style-type: none;">DEALSIZE: A categorical representation of the deal size (e.g., "Small", "Medium").</li>
+                    </ol>
+                    <ol>
+
+
+                        <li><u><b>Check for missing values</b></u></li>
+                        <section class="image-display">
+                            <div class="image-container">
+                                <img src="images/sales-missing-values.PNG" alt="Sales Missing Values">
+                            </div>
+                        </section>
+                   <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
+                    <p>There are 4 columns with lots of missing values in which we will handle later: ADDRESSLINE2, STATE, POSTALCODE, TERRITORY</p>
+
+
+                        <li><u><b>Histogram for 'SALES' column and checking for outliers</b></u></li>
+                        <section class="image-display">
+                            <div class="image-container">
+                                <img src="images/sales-histogram.PNG" alt="Sales Histogram">
+                            </div>
+                            <div class="image-container">
+                                <img src="images/sales-boxplot-outlier.PNG" alt="Sales BoxPlot">
+                            </div>
+                        </section>
+                 <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
+                    <p>Distribution of Sales: I notice that while most sales values fall within a typical range, there are some transactions with significantly higher values. These could be due to various reasons such as bulk orders, high-valued products, or special deals.</p>
+
+
+                        <li><u><b>Check for correlation and relationships</b></u></li>
+                        <section class="image-display">
+                            <div class="image-container">
+                                <img src="images/sales-correlation.PNG" alt="Sales Correlation">
+                            </div>
+                            <div class="image-container">
+                                <img src="images/sales-quantityvssales.PNG" alt="Quantity Ordered and Sales">
+                            </div>
+                        </section>
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                        </div>
+                        <p>Some observations: Strong Positive Correlations:
+
+                            QUANTITYORDERED and SALES: As the quantity of items ordered increases, the total sales amount also increases, which is expected.
+                            
+                            PRICEEACH and MSRP: The price of each item has a strong correlation with its manufacturer's suggested retail price (MSRP). This suggests that the selling price is often closely related to the MSRP.</p>
+
+                        <p>Relationship between Quantity Ordered and Sales: a clear positive relationship between the quantity of items ordered and the total sales amount. This is expected, as ordering more items would generally result in higher sales values. There are some instances where even a high quantity ordered has a relatively lower total sales, suggesting discounted or lower-priced items.</p>
+
+
+                        <li><u><b>More Visualizations</b></u></li>
+                        <section class="image-display">
+                            <div class="image-container">
+                                <img src="images/sales-time-plot.PNG" alt="Total Salese Over Time">
+                            </div>
+                            <div class="image-container">
+                                <img src="images/sales-by-country.PNG" alt="Total Sales By Country">
+                            </div>
+                        </section>
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                        </div>
+                        <p>Total Sales over Time: The line chart depicts the evolution of sales over time. We observe some seasonality in the sales data, with certain periods (possibly months or quarters) consistently showing peaks. This could be due to seasonal promotions, holidays, or other factors affecting consumer buying behavior.</p>
+                        <p>Total Sales by Country: The bar chart showcases sales distribution across countries. The USA, Spain, and France are the top three countries in terms of sales, suggesting significant market shares in these regions</p>
+                    </ol>
+
+                    <h3 style="color: red">Data Cleaning</h3>
+                    <h4>Steps I take to clean the date:</h4>
+                    <ol>
+                        <li style="list-style-type: none;">Handling Missing Values for 4 columns: ADDRESSLINE2, STATE, POSTALCODE, TERRITORY</li>
+                        <li style="list-style-type: none;">Remove duplicate rows in dataset</li>
+                        <li style="list-style-type: none;">Convert columns such as ORDERDATE to correct datetime format</li>
+                        <li style="list-style-type: none;">Handle Outliers</li>
+                        <li style="list-style-type: none;">Standardize Values</li>
+                    </ol>
+                    <p>Then I perform some feature engineerings such as getting 5 new columns:Year, Month, Day, Weekday, Is_Weekend from Order Date, a new column called Total Order Value and Product Popularity<p>
+                        <section class="image-display">
+                            <div class="image-container">
+                                <img src="images/sales-extra-data-viz.PNG" alt="Some more Data Visualizations">
+                            </div>
+                        </section>
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                        </div>
+                    </br></br>
+                        <h4>I will build 4 models to help solve these problems: Predicting Sales, Time Series Forecasting, Classification, Clustering</h4>
+                    </br></br>
+                        <h3 style="color: red">Regression Model for Predicting Sales</h3> <p>finding which variables contribute the most and which regression algorithms works the best</p>
+                        <li style="list-style-type: none;">Data Preprocessing: Prepare the data for regression analysis. This involves handling missing values, encoding categorical variables, and splitting the dataset into training and testing sets.</li>
+   
+                        <li style="list-style-type: none;">Feature Selection: Identify which features contribute the most to predicting sales.</li>
+                        <li style="list-style-type: none;">Model Building and Evaluation: Implement various regression algorithms, train them on the dataset, and evaluate their performance.</li>
+                        <li style="list-style-type: none;">Model Comparison: Compare the performance of the various regression models to identify the best one.</li>
+                                </br>
+                                <section class="image-display">
+                                    <div class="image-container">
+                                        <img src="images/sales-feature-selection.PNG" alt="Feature Selection">
+                                    </div>
+                                    <div class="image-container">
+                                        <img src="images/sales-random-forest-regressor.PNG" alt="Evaluating Random Forest Regressor">
+                                    </div>
+                                    <div class="image-container">
+                                        <img src="images/sales-model-selection.PNG" alt="Feature Selection">
+                                    </div>
+                                </section>
+                                <div id="myModal" class="modal">
+                                    <span class="close">&times;</span>
+                                    <img class="modal-content" id="img01">
+                                    <div id="caption"></div>
+                                </div>
+                            </br>
+                            <h3 style="color: red">Time Series Analysis</h3>
+                            <ol>
+                                <li style="list-style-type: none;">Date Preparation: Extract Time Series Data, Resampling: Monthly Aggregation, Handling Missing Values</li>
+                                <li style="list-style-type: none;">Exploratory Data Analysis</li>
+                                <li style="list-style-type: none;">Stationarity Check & Transformation: Test For Stationarity: Augumented Dickey-Fuller test</li><p></p>
+
+                                <section class="image-display">
+                                    <div class="image-container">
+                                        <img src="images/sales-time-series-viz_1.PNG" alt="Time Series Analysis 1">
+                                    </div>
+                                    <div class="image-container">
+                                        <img src="images/sales-time-series-viz_2.PNG" alt="Time Series Analysis 2">
+                                    </div>
+                                </section>
+                                <div id="myModal" class="modal">
+                                    <span class="close">&times;</span>
+                                    <img class="modal-content" id="img01">
+                                    <div id="caption"></div>
+                                </div>
+                                <h6>Observations:</h6>
+                                <p><strong>Monthly Sales Visualization:</strong> The plot shows the monthly sales over time. We can observe an upward trend and some seasonality in the data.</p>
+                                <h7>Decomposition:</h7>
+                                <ul>
+                                    <li><strong>Trend:</strong> The trend component displays a general upward movement in sales over the years.</li>
+                                    <li><strong>Seasonal:</strong> The seasonal component exhibits a clear repeated pattern annually.</li>
+                                    <li><strong>Residual:</strong> The residual component represents the noise or randomness left after extracting trend and seasonality.</li>
+                                </ul>
+                            
+                                <h6>Augmented Dickey-Fuller (ADF) Test:</h6>
+                                <p>The ADF test is used to determine the presence of a unit root in the series, and hence helps in understanding if the series is stationary or not.</p>
+                                <p>The p-value is <strong>0.0044</strong>, which is less than the typical threshold of <strong>0.05</strong>, suggesting that the time series is stationary.</p>
+                                <p>The test statistic is less than the critical values at 1%, 5%, and 10% confidence levels, further indicating stationarity.</p>
+                                <p>Given that the series is already stationary, we don't need to apply further transformations (like differencing or logarithmic transformation) for now.</p>
+
+                            </br></ol>
+                                <h4>Time Series Model Selection and Evaluation</h4>
+                                <section class="image-display">
+                                    <div class="image-container">
+                                        <img src="images/sales-time-series-selection-eval.PNG" alt="Time Series Selection">
+                                    </div>
+                                    <div class="image-container">
+                                        <img src="images/sales-sarimax.PNG" alt="Time Series Sarimax">
+                                    </div>
+                                    <div class="image-container">
+                                        <img src="images/sales-sarimax-evaluation.PNG" alt="Time Series Sarimax Evaluation">
+                                    </div>
+                                </section>
+                                <div id="myModal" class="modal">
+                                    <span class="close">&times;</span>
+                                    <img class="modal-content" id="img01">
+                                    <div id="caption"></div>
+                                </div>
+                                <h5>Interpretation of SARIMAX Model</h5>
+                                <h6>The AR(1) and MA(1) terms are not statistically significant.</h6>
+                                <p>This suggests that the first-order auto-regressive (AR) and moving average (MA) terms in the SARIMAX model are not statistically meaningful.</p>
+                                <h6>The residuals do not show significant autocorrelation at lag 1.</h6>
+                                <p>Autocorrelation at lag 1 is not statistically significant in the residuals of the model, indicating that there is no strong linear dependence between adjacent observations.</p>
+                                <h6>Residuals might not be perfectly normally distributed, but they're not significantly non-normal based on the Jarque-Bera test.</h6>
+                                <p>The Jarque-Bera test suggests that while the residuals may not follow a perfect normal distribution, they do not deviate significantly from normality.</p>
+                                <h6>There's evidence of heteroskedasticity in the residuals, indicating the model might not capture all patterns in the data.</h6>
+                                <p>The presence of heteroskedasticity in the residuals suggests that the model may not adequately capture all patterns and variations in the data.</p>
+                                <p>Given these results, there might be room for improvement in the model, either by adjusting model terms, accounting for seasonality, or considering other external factors.</p>
+                            </ol>
+
+                            <h3 style="color: red;">Building Classification Model</h3>
+                            <p>We will build a Random Forest Classifier with the following hyperparameters</p>
+                            <p>
+                                n_estimators: 50,
+                                
+                                min_samples_split: 2,
+                                
+                                min_samples_leaf: 1,6,
+                                
+                                max_depth: None</p>
+                            
+                                <h3 style="color: red;">Building Clustering Model</h3>
+                                <h5>We will build a clustering model where clustering is based on purchasing behavior, we can consider the following attributes:</h5>
+                                <ol>
+                                    <li>QUANTITYORDERED, PRICEEACH, SALES, Total_Order_Values, and Product_Popularity</li>
+                                </ol>
+                                <section class="image-display">
+                                    <div class="image-container">
+                                        <img src="images/sales-clustering-1.PNG" alt="Clustering">
+                                    </div>
+                                    <div class="image-container">
+                                        <img src="images/sales-clustering-2.PNG" alt="Clustering">
+                                    </div>
+                                    <div class="image-container">
+                                        <img src="images/sales-clustering-3.PNG" alt="Clustering">
+                                    </div>
+                                    <div class="image-container">
+                                        <img src="images/sales-clustering-4.PNG" alt="Clustering">
+                                    </div>
+                                </section>
+                                <div id="myModal" class="modal">
+                                    <span class="close">&times;</span>
+                                    <img class="modal-content" id="img01">
+                                    <div id="caption"></div>
+                                </div>
+                                
+
+                </header>
+                <h5>Github Link</h5>
+                <a href="https://github.com/huygg1004/Sales-Data-Analytics.git" target="_blank">https://github.com/huygg1004/Sales-Data-Analytics.gitt</a>
+            </section>
+        </div>
+
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul>
+                <li>&copy; Huy Doan</li>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal, use its "alt" text as a caption
+        var img = document.querySelectorAll('.image-container img');
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        for (let i = 0; i < img.length; i++) {
+            img[i].onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        // Close the modal when the background (but not the image or caption) is clicked
+        modal.onclick = function (event) {
+            if (event.target == modal) {  // Check if the background was clicked
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
+
+</body>
+<style>
+    .image-display {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: nowrap;
+        /* Ensure images stay in one row and don't wrap to the next line */
+    }
+
+    .image-container {
+        flex: 1;
+        /* Distribute container space equally */
+        max-width: 24%;
+        /* Allocate a quarter of the space to each image, minus the gap */
+        text-align: center;
+    }
+
+    .image-container img {
+        width: 100%;
+        /* Make image take full width of its container */
+        height: auto;
+        /* Maintain the aspect ratio */
+        max-height: 150px;
+        /* Optional: You can adjust this to limit the height if necessary */
+    }
+
+    /* Media queries for responsiveness. This is an example for screens less than 600px wide */
+    @media (max-width: 600px) {
+        .image-container {
+            max-width: 100%;
+            /* Allow the image containers to take full width */
+        }
+
+        .image-display {
+            flex-direction: column;
+            /* Stack images vertically on smaller screens */
+        }
+    }
+
+    /* Style the modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 90%;
+        /* increased from 80% to 90% */
+        max-width: 1200px;
+        /* you can adjust this value based on your preference */
+    }
+
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    .modal-content,
+    #caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+    /* Close button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .github-section {
+        text-align: center;
+        /* Center the content */
+        margin: 40px 0;
+        /* Add some space above and below the section */
+    }
+
+    .github-section a {
+        color: #333;
+        /* Color of the text */
+        text-decoration: none;
+        /* Remove underline */
+        font-weight: bold;
+        /* Make the text bold */
+        display: inline-flex;
+        /* Use flex to align the icon and text side by side */
+        align-items: center;
+        /* Vertically align the icon and text */
+        gap: 10px;
+        /* Add some space between the icon and text */
+    }
+
+    .github-section a:hover {
+        color: #0076b6;
+        /* Change color on hover */
+        text-decoration: underline;
+        /* Add underline on hover */
+    }
+
+    .github-section img {
+        width: 24px;
+        /* Adjust based on the size of your icon */
+        height: 24px;
+        /* Adjust based on the size of your icon */
+    }
+</style>
+
+</html>
